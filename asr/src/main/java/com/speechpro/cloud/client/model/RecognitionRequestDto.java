@@ -35,8 +35,6 @@ public class RecognitionRequestDto {
    * Recognize with package
    */
 
-
-
   @SerializedName("package_id")
   private String packageId = null;
 

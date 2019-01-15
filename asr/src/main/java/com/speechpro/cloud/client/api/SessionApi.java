@@ -54,7 +54,7 @@ public class SessionApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/session";
+        String localVarPath = "/vksession/rest/session";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -178,7 +178,7 @@ public class SessionApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/session";
+        String localVarPath = "/vksession/rest/session";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -302,7 +302,7 @@ public class SessionApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/session";
+        String localVarPath = "/vksession/rest/session";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

@@ -24,10 +24,10 @@ import java.util.Objects;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-12T21:20:53.133+03:00")
 public class AudioFileDto {
   @SerializedName("data")
-  private byte[] data = new byte[]{};
+  private byte[] data;
 
   @SerializedName("mime")
-  private String mime = null;
+  private String mime;
 
   public AudioFileDto(byte[] data, String mime) {
     this.data = data;

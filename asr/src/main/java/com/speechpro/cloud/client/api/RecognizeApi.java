@@ -53,7 +53,7 @@ public class RecognizeApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/recognize/stream";
+        String localVarPath = "/vkasr/rest/v1/recognize/stream";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -188,7 +188,7 @@ public class RecognizeApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/v1/recognize";
+        String localVarPath = "/vkasr/rest/v1/recognize";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -308,6 +308,148 @@ public class RecognizeApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+
+    /**
+     * Build call for recognizeAdvanced
+     * @param xSessionID Session identifier (required)
+     * @param body Recognition request with audio file, mime type and package ID (required)
+     * @param xRequestId Request identifier (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call recognizeAdvancedCall(UUID xSessionID, AdvancedRecognitionRequestDto body, String xRequestId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/vkasr/rest/v1/recognize/advanced";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xSessionID != null)
+            localVarHeaderParams.put("X-Session-ID", apiClient.parameterToString(xSessionID));
+        if (xRequestId != null)
+            localVarHeaderParams.put("X-Request-Id", apiClient.parameterToString(xRequestId));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+                "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+                "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call recognizeAdvancedValidateBeforeCall(UUID xSessionID, AdvancedRecognitionRequestDto body, String xRequestId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+
+        // verify the required parameter 'xSessionID' is set
+        if (xSessionID == null) {
+            throw new ApiException("Missing the required parameter 'xSessionID' when calling recognizeAdvanced(Async)");
+        }
+
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling recognizeAdvanced(Async)");
+        }
+
+
+        com.squareup.okhttp.Call call = recognizeAdvancedCall(xSessionID, body, xRequestId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+
+    /**
+     * Recognize speech with advanced options
+     *
+     * @param xSessionID Session identifier (required)
+     * @param body Recognition request with audio file, mime type and package ID (required)
+     * @param xRequestId Request identifier (optional)
+     * @return List&lt;ASRAdvancedResultDto&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<ASRAdvancedResultDto> recognizeAdvanced(UUID xSessionID, AdvancedRecognitionRequestDto body, String xRequestId) throws ApiException {
+        ApiResponse<List<ASRAdvancedResultDto>> resp = recognizeAdvancedWithHttpInfo(xSessionID, body, xRequestId);
+        return resp.getData();
+    }
+
+    /**
+     * Recognize speech with advanced options
+     *
+     * @param xSessionID Session identifier (required)
+     * @param body Recognition request with audio file, mime type and package ID (required)
+     * @param xRequestId Request identifier (optional)
+     * @return ApiResponse&lt;List&lt;ASRAdvancedResultDto&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<ASRAdvancedResultDto>> recognizeAdvancedWithHttpInfo(UUID xSessionID, AdvancedRecognitionRequestDto body, String xRequestId) throws ApiException {
+        com.squareup.okhttp.Call call = recognizeAdvancedValidateBeforeCall(xSessionID, body, xRequestId, null, null);
+        Type localVarReturnType = new TypeToken<List<ASRAdvancedResultDto>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Recognize speech with advanced options (asynchronously)
+     *
+     * @param xSessionID Session identifier (required)
+     * @param body Recognition request with audio file, mime type and package ID (required)
+     * @param xRequestId Request identifier (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call recognizeAdvancedAsync(UUID xSessionID, AdvancedRecognitionRequestDto body, String xRequestId, final ApiCallback<List<ASRAdvancedResultDto>> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = recognizeAdvancedValidateBeforeCall(xSessionID, body, xRequestId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<ASRAdvancedResultDto>>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
     /**
      * Build call for recognizeSessionless
      * @param body Request with user login data and recognition request (required)
@@ -320,7 +462,7 @@ public class RecognizeApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/v1/recognize/sessionless";
+        String localVarPath = "/vkasr/rest/v1/recognize/sessionless";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -443,7 +585,7 @@ public class RecognizeApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/v1/recognize/words";
+        String localVarPath = "/vkasr/rest/v1/recognize/words";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -575,7 +717,7 @@ public class RecognizeApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/v1/recognize/sessionless/words";
+        String localVarPath = "/vkasr/rest/v1/recognize/sessionless/words";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -698,7 +840,7 @@ public class RecognizeApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/v1/recognize/stream";
+        String localVarPath = "/vkasr/rest/v1/recognize/stream";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

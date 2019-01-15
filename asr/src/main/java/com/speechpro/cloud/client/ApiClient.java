@@ -33,9 +33,7 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.security.GeneralSecurityException;
-import java.security.KeyStore;
-import java.security.SecureRandom;
+import java.security.*;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
@@ -49,7 +47,7 @@ import java.util.regex.Pattern;
 
 public class ApiClient {
 
-    private String basePath = "https://cp.speechpro.com/vkasr/rest";
+    private String basePath = "https://cp.speechpro.com";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -75,7 +73,6 @@ public class ApiClient {
      */
     public ApiClient() {
         httpClient = new OkHttpClient();
-
 
         verifyingSsl = true;
 

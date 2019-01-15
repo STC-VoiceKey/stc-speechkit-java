@@ -53,7 +53,7 @@ public class PackagesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/packages/available";
+        String localVarPath = "/vkasr/rest/v1/packages/available";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -178,7 +178,7 @@ public class PackagesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/packages/{packageId}/load"
+        String localVarPath = "/vkasr/rest/v1/packages/{packageId}/load"
             .replaceAll("\\{" + "packageId" + "\\}", apiClient.escapeString(packageId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -312,7 +312,7 @@ public class PackagesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/packages/{packageId}/unload"
+        String localVarPath = "/vkasr/rest/v1/packages/{packageId}/unload"
             .replaceAll("\\{" + "packageId" + "\\}", apiClient.escapeString(packageId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

@@ -54,7 +54,7 @@ public class SessionApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/session";
+        String localVarPath = "/vksession/rest/session";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -129,6 +129,7 @@ public class SessionApi {
     public ApiResponse<StatusDto> checkSessionWithHttpInfo(UUID xSessionId) throws ApiException {
         com.squareup.okhttp.Call call = checkSessionValidateBeforeCall(xSessionId, null, null);
         Type localVarReturnType = new TypeToken<StatusDto>(){}.getType();
+        System.out.println(localVarReturnType);
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -178,7 +179,7 @@ public class SessionApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/session";
+        String localVarPath = "/vksession/rest/session";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -238,9 +239,8 @@ public class SessionApi {
      * @return StatusDto
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public StatusDto closeSession(UUID xSessionId) throws ApiException {
-        ApiResponse<StatusDto> resp = closeSessionWithHttpInfo(xSessionId);
-        return resp.getData();
+    public void closeSession(UUID xSessionId) throws ApiException {
+        closeSessionWithHttpInfo(xSessionId);
     }
 
     /**
@@ -250,7 +250,7 @@ public class SessionApi {
      * @return com.speechpro.cloud.client.ApiResponse&lt;StatusDto&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<StatusDto> closeSessionWithHttpInfo(UUID xSessionId) throws ApiException {
+    public ApiResponse<Void> closeSessionWithHttpInfo(UUID xSessionId) throws ApiException {
         com.squareup.okhttp.Call call = closeSessionValidateBeforeCall(xSessionId, null, null);
         Type localVarReturnType = new TypeToken<StatusDto>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -302,7 +302,7 @@ public class SessionApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/session";
+        String localVarPath = "/vksession/rest/session";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

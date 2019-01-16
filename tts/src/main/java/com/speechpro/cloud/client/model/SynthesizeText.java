@@ -11,7 +11,7 @@
  */
 
 
-package client.model;
+package com.speechpro.cloud.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;

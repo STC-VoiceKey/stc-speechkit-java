@@ -52,7 +52,7 @@ public class SynthesizeApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/languages";
+        String localVarPath = "/vktts/rest/v1/languages";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -177,7 +177,7 @@ public class SynthesizeApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/v1/synthesize";
+        String localVarPath = "/vktts/rest/v1/synthesize";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -309,7 +309,7 @@ public class SynthesizeApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/v1/synthesize/sessionless";
+        String localVarPath = "/vktts/rest/v1/synthesize/sessionless";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -432,7 +432,7 @@ public class SynthesizeApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/languages/{language}/voices"
+        String localVarPath = "/vktts/rest/v1/languages/{language}/voices"
             .replaceAll("\\{" + "language" + "\\}", apiClient.escapeString(language.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -566,7 +566,7 @@ public class SynthesizeApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/v1/synthesize/stream";
+        String localVarPath = "/vktts/rest/v1/synthesize/stream";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -699,7 +699,7 @@ public class SynthesizeApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/synthesize/stream";
+        String localVarPath = "/vktts/rest/v1/synthesize/stream";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

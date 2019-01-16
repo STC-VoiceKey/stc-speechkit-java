@@ -49,7 +49,7 @@ import java.util.regex.Pattern;
 
 public class ApiClient {
 
-    private String basePath = "https://cp.speechpro.com/vkdiarization/rest";
+    private String basePath = "https://cp.speechpro.com";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;

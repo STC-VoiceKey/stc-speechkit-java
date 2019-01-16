@@ -15,8 +15,8 @@ package com.speechpro.cloud.client.api;
 
 import com.google.gson.reflect.TypeToken;
 import com.speechpro.cloud.client.*;
-import com.speechpro.cloud.client.model.DiarizationParam;
-import com.speechpro.cloud.client.model.DiarizationResponse;
+import com.speechpro.cloud.client.model.Audio;
+import com.speechpro.cloud.client.model.DiarizationResult;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -53,11 +53,11 @@ public class DiarizationApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call diarizationCall(String xSessionId, DiarizationParam body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call diarizationCall(String xSessionId, Audio body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/v1/diarization";
+        String localVarPath = "/vkdiarization/rest/v1/diarization";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -97,7 +97,7 @@ public class DiarizationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call diarizationValidateBeforeCall(String xSessionId, DiarizationParam body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call diarizationValidateBeforeCall(String xSessionId, Audio body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'xSessionId' is set
         if (xSessionId == null) {
@@ -123,8 +123,8 @@ public class DiarizationApi {
      * @return DiarizationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DiarizationResponse diarization(String xSessionId, DiarizationParam body) throws ApiException {
-        ApiResponse<DiarizationResponse> resp = diarizationWithHttpInfo(xSessionId, body);
+    public DiarizationResult diarization(String xSessionId, Audio body) throws ApiException {
+        ApiResponse<DiarizationResult> resp = diarizationWithHttpInfo(xSessionId, body);
         return resp.getData();
     }
 
@@ -136,9 +136,9 @@ public class DiarizationApi {
      * @return ApiResponse&lt;DiarizationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DiarizationResponse> diarizationWithHttpInfo(String xSessionId, DiarizationParam body) throws ApiException {
+    public ApiResponse<DiarizationResult> diarizationWithHttpInfo(String xSessionId, Audio body) throws ApiException {
         com.squareup.okhttp.Call call = diarizationValidateBeforeCall(xSessionId, body, null, null);
-        Type localVarReturnType = new TypeToken<DiarizationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<DiarizationResult>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -151,7 +151,7 @@ public class DiarizationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call diarizationAsync(String xSessionId, DiarizationParam body, final ApiCallback<DiarizationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call diarizationAsync(String xSessionId, Audio body, final ApiCallback<DiarizationResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -173,7 +173,7 @@ public class DiarizationApi {
         }
 
         com.squareup.okhttp.Call call = diarizationValidateBeforeCall(xSessionId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<DiarizationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<DiarizationResult>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

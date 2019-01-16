@@ -23,7 +23,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-12T21:20:53.133+03:00")
 public class StatusDto {
-  @SerializedName("status")
+  @SerializedName("is_active")
   private String status = null;
 
   public StatusDto status(String status) {

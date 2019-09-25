@@ -58,6 +58,10 @@ public class WebSocketApi {
         ws.sendBinary(bytes);
     }
 
+    public void sendText(String text){
+        ws.sendText(text);
+    }
+
     public UUID getTransactionId(){
         return transactionId;
     }

@@ -36,7 +36,7 @@ public class Main {
         UUID sessionId = sessionDto.getSessionId();
         RecognizeApi recognizeApi = new RecognizeApi();
         ApiResponse<WebSocketServerConfiguration> apiResponse = null;
-        StreamRequestDto streamRequestDto = new StreamRequestDto("CommonRus", "audio/l16");
+        StreamRequestDto streamRequestDto = new StreamRequestDto("FarField", "audio/l16");
         try {
             apiResponse = recognizeApi.startWithHttpInfo(sessionId, streamRequestDto);
         } catch (ApiException e) {
